@@ -1,9 +1,9 @@
 pipeline {
-    agent { docker 'maven:3.3.3' }
+    agent any
     stages {
-        stage('build') {
+        stage('拉取源码') {
             steps {
-                sh 'mvn --version'
+                echo 'Hello World'
             }
         }
     }
