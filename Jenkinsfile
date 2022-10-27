@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('拉取源码') {
+        stage('compile') {
             steps {
-                echo 'Hello World'
+                sh './gradlew clean build'
             }
         }
     }
