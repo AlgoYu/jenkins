@@ -8,7 +8,7 @@ pipeline {
         }
         stage('build docker image') {
             steps {
-                echo 'docker build'
+                sh 'docker build -t algoyu/test .'
             }
         }
         stage('upload to image libraries') {
