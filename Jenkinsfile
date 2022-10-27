@@ -8,7 +8,7 @@ pipeline {
         }
         stage('build docker image') {
             steps {
-                echo '1'
+                echo 'docker build'
             }
         }
         stage('upload to image libraries') {
