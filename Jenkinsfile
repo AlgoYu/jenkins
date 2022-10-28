@@ -13,7 +13,7 @@ pipeline {
         }
         stage('upload to image libraries') {
             steps {
-                echo '1'
+                sh 'docker push algoyu/test'
             }
         }
         stage('deploy image') {
