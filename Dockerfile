@@ -1,4 +1,4 @@
 FROM openjdk:11.0.16-jre
-COPY build/libs/Jenkinsfile-0.0.1-SNAPSHOT.jar /myjar
+COPY build/libs/jenkins-service.jar /myjar
 EXPOSE 9010
-CMD ["java", "-jar","/myjar/Jenkinsfile-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar","/myjar/jenkins-service.jar"]
