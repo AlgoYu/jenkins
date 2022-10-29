@@ -12,11 +12,13 @@ pipeline {
         }
         stage('build docker image') {
             steps{
+                echo '1'
 //                 sh "docker build -t algoyu/test ."
             }
         }
         stage('upload to image libraries') {
             steps{
+                echo '1'
 //                 sh 'docker push algoyu/test'
             }
         }
