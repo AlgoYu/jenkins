@@ -5,16 +5,19 @@ pipeline {
             steps {
                 sh "./gradlew clean build -x test"
                 echo "构建版本:$BUILD_ID"
+                script {
+                    sh(script: "echo $BUILD_MONTH",)
+                }
             }
         }
         stage('build docker image') {
             steps{
-                sh "docker build -t algoyu/test ."
+//                 sh "docker build -t algoyu/test ."
             }
         }
         stage('upload to image libraries') {
             steps{
-                sh 'docker push algoyu/test'
+//                 sh 'docker push algoyu/test'
             }
         }
         stage('deploy image') {
