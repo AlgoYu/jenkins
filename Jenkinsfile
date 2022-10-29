@@ -1,19 +1,17 @@
 pipeline {
     agent any
-    environment {
-        BUILD_VERSION = ${BUILD_DATE_FORMATTED, "yyyy-MM-dd"}
-    }
     stages {
         stage('build source') {
             steps {
                 sh "./gradlew clean build -x test"
+                echo ${BUILD_VERSION}
             }
         }
         stage('build docker image') {
-            sh "docker build -t algoyu/test-${BUILD_VERSION} ."
+            sh "docker build -t algoyu/test ."
         }
         stage('upload to image libraries') {
-            sh 'docker push algoyu/test-${BUILD_VERSION}'
+            sh 'docker push algoyu/test'
         }
         stage('deploy image') {
             steps {
