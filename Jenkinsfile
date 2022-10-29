@@ -18,6 +18,7 @@ pipeline {
         stage('deploy image') {
             steps {
                 echo '1'
+                echo '1'
             }
         }
     }
