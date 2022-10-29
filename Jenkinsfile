@@ -8,10 +8,14 @@ pipeline {
             }
         }
         stage('build docker image') {
-            sh "docker build -t algoyu/test ."
+            steps{
+                sh "docker build -t algoyu/test ."
+            }
         }
         stage('upload to image libraries') {
-            sh 'docker push algoyu/test'
+            steps{
+                sh 'docker push algoyu/test'
+            }
         }
         stage('deploy image') {
             steps {
