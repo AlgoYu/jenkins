@@ -13,9 +13,9 @@ pipeline {
         }
         stage('upload to image libraries') {
             steps{
-                sh "docker tag algoyu/test algoyu/jenkins-test:$BUILD_ID"
                 // 该步骤通常不应该在您的脚本中使用。请参考帮助查看详情。
-                withDockerRegistry(credentialsId: 'dockerhub', url: 'https://hub.docker.com/repository/docker/algoyu/test-jenkins') {
+                withDockerRegistry(credentialsId: 'dockerhub') {
+                    sh "docker tag algoyu/test algoyu/jenkins-test:$BUILD_ID"
                     sh "docker push algoyu/jenkins-test:$BUILD_ID"
                 }
             }
