@@ -4,7 +4,7 @@ pipeline {
         stage('build source') {
             steps {
                 sh "./gradlew clean build -x test"
-                echo "${BUILD_VERSION}"
+                echo "构建版本:${BUILD_VERSION}"
             }
         }
         stage('build docker image') {
